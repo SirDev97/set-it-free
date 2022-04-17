@@ -1,4 +1,5 @@
-import { View, Image } from 'react-native';
+import { View, Image, TextInput, Text } from 'react-native';
+import React, { useState } from 'react';
 
 // Components
 
@@ -16,7 +17,14 @@ import MessagesScreen from './app/screens/MessagesScreen';
 import ListItem from './app/components/ListItem';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
+import AppTextInput from './app/components/AppTextInput';
 
 export default function App() {
-  return <ListingsScreen />;
+  const [firstName, setFirstName] = useState('');
+
+  return (
+    <Screen>
+      <AppTextInput placeholder="username" icon="email" />
+    </Screen>
+  );
 }
