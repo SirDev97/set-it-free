@@ -3,5 +3,7 @@ export default {
   secondary: '#ff914d',
   black: '#000',
   white: '#fff',
-  medium: '#6e6969',
+  mediumGray: '#6e6969',
+  lightGray: '#f8f4f4',
+  danger: '#ff5252',
 };
