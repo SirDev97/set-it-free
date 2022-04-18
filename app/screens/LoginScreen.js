@@ -6,14 +6,14 @@ import * as Yup from 'yup';
 import AppButton from '../components/AppButton';
 import AppTextInput from '../components/AppTextInput';
 import Screen from '../components/Screen';
-import AppText from '../components/AppText';
+import ErrorMessage from '../components/ErrorMessage';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
   password: Yup.string().required().min(6).label('Password'),
 });
 
-function LoginScreen(props) {
+function LoginScreen() {
   return (
     <Screen style={styles.container}>
       <Image style={styles.logo} source={require('../assets/logo.png')} />
@@ -34,7 +34,7 @@ function LoginScreen(props) {
               onChangeText={handleChange('email')}
             />
 
-            <AppText style={{ color: 'red' }}>{errors.email}</AppText>
+            <ErrorMessage error={errors.email} />
 
             <AppTextInput
               autoCapitalize="none"
@@ -46,7 +46,7 @@ function LoginScreen(props) {
               onChangeText={handleChange('password')}
             />
 
-            <AppText style={{ color: 'red' }}>{errors.password}</AppText>
+            <ErrorMessage error={errors.password} />
 
             <AppButton title="Login" onPress={handleSubmit} />
           </>
@@ -58,7 +58,7 @@ function LoginScreen(props) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
+    padding: 20,
   },
   logo: {
     width: 150,
