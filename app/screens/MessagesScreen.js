@@ -12,15 +12,16 @@ import Screen from '../components/Screen';
 const initialMessages = [
   {
     id: 1,
-    title: 'T1',
-    description: 'D1',
+    title: 'Alkin Maystorov',
+    description: 'Hey! Is this item still available?',
     image: require('../assets/alkin.jpg'),
   },
 
   {
     id: 2,
-    title: 'T2',
-    description: 'D2',
+    title: 'Alkin Maystorov',
+    description:
+      'I am interested in this item. Are you willing to negotiate the price?',
     image: require('../assets/alkin.jpg'),
   },
 ];
