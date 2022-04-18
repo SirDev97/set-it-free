@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
-import ListItem from '../components/ListItem';
-import ListItemDeleteAction from '../components/ListItemDeleteAction';
-import ListItemSeparator from '../components/ListItemSeparator';
+// Components
+import {
+  ListItem,
+  ListItemDeleteAction,
+  ListItemSeparator,
+} from '../components/lists';
 import Screen from '../components/Screen';
 
 const initialMessages = [
@@ -21,7 +24,7 @@ const initialMessages = [
   },
 ];
 
-function MessagesScreen(props) {
+function MessagesScreen() {
   const [messages, setMessages] = useState(initialMessages);
   const [refreshing, setRefreshing] = useState(false);
 

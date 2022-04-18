@@ -1,10 +1,10 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, View, Image } from 'react-native';
+
+// Components
 import AppButton from '../components/AppButton';
 
-import colors from '../config/colors';
-
-function WelcomeScreen(props) {
+function WelcomeScreen() {
   return (
     <ImageBackground
       blurRadius={5}

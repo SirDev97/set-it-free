@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 
-import colors from '../config/colors';
-import AppText from '../components/AppText';
-import ListItem from '../components/ListItem';
+// Styles
+import defaultStyles from '../config/defaultStyles';
 
-function ListingDetailsScreen(props) {
+// Components
+import AppText from '../components/AppText';
+import { ListItem } from '../components/lists';
+
+function ListingDetailsScreen() {
   return (
     <View>
       <Image style={styles.image} source={require('../assets/jacket.jpg')} />
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
     height: 300,
   },
   price: {
-    color: colors.secondary,
+    color: defaultStyles.colors.secondary,
     fontWeight: 'bold',
     fontSize: 20,
     marginVertical: 10,

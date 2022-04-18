@@ -1,31 +1,32 @@
 import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
+
+// Styles
+import defaultStyles from '../config/defaultStyles';
+
+// Components
+import { ListItem, ListItemSeparator } from '../components/lists';
 import Icon from '../components/Icon';
-
-import ListItem from '../components/ListItem';
-import ListItemSeparator from '../components/ListItemSeparator';
 import Screen from '../components/Screen';
-
-import colors from '../config/colors';
 
 const menuItems = [
   {
     title: 'My Listings',
     icon: {
       name: 'format-list-bulleted',
-      backgroundColor: colors.primary,
+      backgroundColor: defaultStyles.colors.primary,
     },
   },
   {
     title: 'My Messages',
     icon: {
       name: 'email',
-      backgroundColor: colors.secondary,
+      backgroundColor: defaultStyles.colors.secondary,
     },
   },
 ];
 
-function AccountScreen(props) {
+function AccountScreen() {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
@@ -55,7 +56,9 @@ function AccountScreen(props) {
       </View>
       <ListItem
         title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor={colors.accent} />}
+        IconComponent={
+          <Icon name="logout" backgroundColor={defaultStyles.colors.accent} />
+        }
       />
     </Screen>
   );
@@ -66,7 +69,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   screen: {
-    backgroundColor: colors.lightGray,
+    backgroundColor: defaultStyles.colors.lightGray,
   },
 });
 

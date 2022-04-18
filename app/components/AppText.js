@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
+// Styles
 import defaultStyles from '../config/defaultStyles';
 
 function AppText({ children, style }) {

@@ -9,11 +9,14 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+// Styles
 import defaultStyles from '../config/defaultStyles';
+
+// Components
+import { ListItemSeparator } from './lists';
 import AppText from './AppText';
 import Screen from './Screen';
 import PickerItem from './PickerItem';
-import ListItemSeparator from './ListItemSeparator';
 
 function AppPicker({ icon, items, selectedItem, onSelectItem, placeholder }) {
   const [modalVisible, setModalVisible] = useState(false);
