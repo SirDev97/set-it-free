@@ -3,10 +3,8 @@ import React from 'react';
 // Components
 
 // Screens
-import LoginScreen from './app/screens/LoginScreen';
-import ListingEditScreen from './app/screens/ListingEditScreen';
-import RegisterScreen from './app/screens/RegisterScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
 
 export default function App() {
-  return <ListingEditScreen />;
+  return <MessagesScreen />;
 }
