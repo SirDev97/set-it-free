@@ -27,9 +27,12 @@ function ListItem({
           onPress={onPress}>
           <View style={styles.container}>
             {IconComponent}
+
             {image && <Image style={styles.image} source={image} />}
+
             <View style={styles.detailsContainer}>
               <AppText style={styles.title}>{title}</AppText>
+
               {subTitle && (
                 <AppText style={styles.subTitle}>{subTitle}</AppText>
               )}
@@ -47,18 +50,22 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: defaultStyles.colors.white,
   },
+
   detailsContainer: {
     marginLeft: 10,
     justifyContent: 'center',
   },
+
   image: {
     width: 70,
     height: 70,
     borderRadius: 35,
   },
+
   subTitle: {
     color: defaultStyles.colors.mediumGray,
   },
+
   title: {
     fontWeight: '500',
   },

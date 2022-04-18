@@ -16,6 +16,7 @@ const initialMessages = [
     description: 'D1',
     image: require('../assets/alkin.jpg'),
   },
+
   {
     id: 2,
     title: 'T2',

@@ -32,10 +32,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
+
   buttonsContainer: {
     padding: 20,
     width: '100%',
   },
+
   logo: {
     width: 250,
     height: 250,

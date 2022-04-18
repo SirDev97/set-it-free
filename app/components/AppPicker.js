@@ -33,9 +33,13 @@ function AppPicker({ icon, items, selectedItem, onSelectItem, placeholder }) {
               style={styles.icon}
             />
           )}
-          <AppText style={[defaultStyles.text, styles.text]}>
-            {selectedItem ? selectedItem : placeholder}
-          </AppText>
+
+          {selectedItem ? (
+            <AppText style={styles.text}> {selectedItem.label}</AppText>
+          ) : (
+            <AppText style={styles.placeholder}>{placeholder}</AppText>
+          )}
+
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
@@ -43,6 +47,7 @@ function AppPicker({ icon, items, selectedItem, onSelectItem, placeholder }) {
           />
         </View>
       </TouchableWithoutFeedback>
+
       <Modal visible={modalVisible} animationType="slide">
         <Screen>
           <Button
@@ -50,6 +55,7 @@ function AppPicker({ icon, items, selectedItem, onSelectItem, placeholder }) {
             color={defaultStyles.colors.secondary}
             onPress={() => setModalVisible(false)}
           />
+
           <FlatList
             data={items}
             ItemSeparatorComponent={ListItemSeparator}
@@ -80,10 +86,18 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     alignItems: 'center',
   },
+
   icon: {
     marginRight: 10,
   },
+
+  placeholder: {
+    color: defaultStyles.colors.mediumGray,
+    flex: 1,
+  },
+
   textInput: defaultStyles.text,
+
   text: {
     flex: 1,
   },

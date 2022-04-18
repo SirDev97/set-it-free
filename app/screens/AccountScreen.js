@@ -36,6 +36,7 @@ function AccountScreen() {
           image={require('../assets/alkin.jpg')}
         />
       </View>
+
       <View style={styles.container}>
         <FlatList
           data={menuItems}
@@ -54,6 +55,7 @@ function AccountScreen() {
           )}
         />
       </View>
+
       <ListItem
         title="Log Out"
         IconComponent={
@@ -68,6 +70,7 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
   },
+
   screen: {
     backgroundColor: defaultStyles.colors.lightGray,
   },
