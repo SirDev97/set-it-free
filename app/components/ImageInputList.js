@@ -15,11 +15,12 @@ function ImageInputList({ imageUris = [], onRemoveImage, onAddImage }) {
         onContentSizeChange={() => scrollView.current.scrollToEnd()}>
         <View style={styles.container}>
           {imageUris.map((uri) => (
-            <ImageInput
-              imageUri={uri}
-              key={uri}
-              onChangeImage={() => onRemoveImage(uri)}
-            />
+            <View key={uri} style={styles.image}>
+              <ImageInput
+                imageUri={uri}
+                onChangeImage={() => onRemoveImage(uri)}
+              />
+            </View>
           ))}
           <ImageInput onChangeImage={(uri) => onAddImage(uri)} />
         </View>
@@ -31,6 +32,10 @@ function ImageInputList({ imageUris = [], onRemoveImage, onAddImage }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
+  },
+
+  image: {
+    marginRight: 10,
   },
 });
 
