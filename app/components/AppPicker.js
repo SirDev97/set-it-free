@@ -22,10 +22,10 @@ function AppPicker({
   icon,
   items,
   numberOfColumns = 1,
-  selectedItem,
   onSelectItem,
   PickerItemComponent = PickerItem,
   placeholder,
+  selectedItem,
   width = '100%',
 }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -42,9 +42,8 @@ function AppPicker({
               style={styles.icon}
             />
           )}
-
           {selectedItem ? (
-            <AppText style={styles.text}> {selectedItem.label}</AppText>
+            <AppText style={styles.text}>{selectedItem.label}</AppText>
           ) : (
             <AppText style={styles.placeholder}>{placeholder}</AppText>
           )}
@@ -56,13 +55,12 @@ function AppPicker({
           />
         </View>
       </TouchableWithoutFeedback>
-
       <Modal visible={modalVisible} animationType="slide">
         <Screen>
           <Button
             title="Close"
-            color={defaultStyles.colors.secondary}
             onPress={() => setModalVisible(false)}
+            color={defaultStyles.colors.secondary}
           />
 
           <FlatList
@@ -76,7 +74,7 @@ function AppPicker({
                 label={item.label}
                 onPress={() => {
                   setModalVisible(false);
-                  onSelectItem(item.label);
+                  onSelectItem(item);
                 }}
               />
             )}
@@ -94,22 +92,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 15,
     marginVertical: 10,
-    alignItems: 'center',
   },
-
   icon: {
     marginRight: 10,
   },
-
   placeholder: {
     color: defaultStyles.colors.mediumGray,
     flex: 1,
   },
-
-  textInput: defaultStyles.text,
-
   text: {
     flex: 1,
+    color: defaultStyles.colors.mediumGray,
   },
 });
 
