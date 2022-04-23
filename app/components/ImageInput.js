@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     overflow: 'hidden',
+    marginHorizontal: 5,
   },
 
   image: {
