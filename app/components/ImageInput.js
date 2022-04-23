@@ -45,7 +45,6 @@ function ImageInput({ imageUri, onChangeImage }) {
       console.log('Error reading an image', error);
     }
   };
-
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
       <View style={styles.container}>
@@ -71,7 +70,6 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     overflow: 'hidden',
-    margin: 10,
   },
 
   image: {
