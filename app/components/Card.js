@@ -1,5 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  TouchableWithoutFeedback,
+} from 'react-native';
 
 // Styles
 import defaultStyles from '../config/defaultStyles';
@@ -7,21 +12,23 @@ import defaultStyles from '../config/defaultStyles';
 // Components
 import AppText from './AppText';
 
-function Card({ title, subTitle, image }) {
+function Card({ title, subTitle, image, onPress }) {
   return (
-    <View style={styles.card}>
-      <Image style={styles.image} source={image} />
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image style={styles.image} source={image} />
 
-      <View style={styles.detailsContainer}>
-        <AppText style={styles.title} numberOfLines={1}>
-          {title}
-        </AppText>
+        <View style={styles.detailsContainer}>
+          <AppText style={styles.title} numberOfLines={1}>
+            {title}
+          </AppText>
 
-        <AppText style={styles.subTitle} numberOfLines={2}>
-          {subTitle}
-        </AppText>
+          <AppText style={styles.subTitle} numberOfLines={2}>
+            {subTitle}
+          </AppText>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 
