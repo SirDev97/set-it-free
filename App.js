@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import * as ImagePicker from 'expo-image-picker';
-import { Button, Image } from 'react-native';
+import React from 'react';
+
+import { NavigationContainer } from '@react-navigation/native';
 
 // Components
 
 // Screens
 import Screen from './app/components/Screen';
-import ImageInput from './app/components/ImageInput';
-import ImageInputList from './app/components/ImageInputList';
-import ListingEditScreen from './app/screens/ListingEditScreen';
+
+// Navigator
+import AuthNavigator from './app/navigation/AuthNavigator';
 
 export default function App() {
-  return <ListingEditScreen />;
+  return (
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+  );
 }
