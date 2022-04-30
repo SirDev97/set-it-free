@@ -18,6 +18,8 @@ import useLocation from '../hooks/useLocation';
 
 // API
 import listingsApi from '../api/listings';
+
+// Screens
 import UploadScreen from './UploadScreen';
 
 // Validation
