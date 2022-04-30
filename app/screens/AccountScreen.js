@@ -12,6 +12,9 @@ import Screen from '../components/Screen';
 // Routes
 import routes from '../navigation/routes';
 
+// Hooks
+import useAuth from '../hooks/useAuth';
+
 const menuItems = [
   {
     title: 'My Listings',
@@ -31,12 +34,14 @@ const menuItems = [
 ];
 
 function AccountScreen({ navigation }) {
+  const { user, logOut } = useAuth();
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Alkin Maystorov"
-          subTitle="alkin9971@gmail.com"
+          title={user.name}
+          subTitle={user.email}
           image={require('../assets/alkin.jpg')}
         />
       </View>
@@ -67,6 +72,7 @@ function AccountScreen({ navigation }) {
         IconComponent={
           <Icon name="logout" backgroundColor={defaultStyles.colors.accent} />
         }
+        onPress={() => logOut()}
       />
     </Screen>
   );

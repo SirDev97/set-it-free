@@ -5,8 +5,8 @@ import defaultStyles from '../../config/defaultStyles';
 
 import AppText from '../AppText';
 
-function ErrorMessage({ error }) {
-  if (!error) null;
+function ErrorMessage({ error, visible }) {
+  if (!visible || !error) null;
 
   return <AppText style={styles.error}>{error}</AppText>;
 }
