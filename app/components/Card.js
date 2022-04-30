@@ -2,9 +2,11 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  Image,
   TouchableWithoutFeedback,
+  Image,
 } from 'react-native';
+// import { Image } from 'react-native-expo-image-cache';
+// import FastImage from 'react-native-fast-image';
 
 // Styles
 import defaultStyles from '../config/defaultStyles';
@@ -17,7 +19,6 @@ function Card({ title, subTitle, imageUrl, onPress }) {
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
         <Image style={styles.image} source={{ uri: imageUrl }} />
-
         <View style={styles.detailsContainer}>
           <AppText style={styles.title} numberOfLines={1}>
             {title}
