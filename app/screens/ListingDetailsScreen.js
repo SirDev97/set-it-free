@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, KeyboardAvoidingView } from 'react-native';
 
 // Styles
 import defaultStyles from '../config/defaultStyles';
@@ -7,12 +7,15 @@ import defaultStyles from '../config/defaultStyles';
 // Components
 import AppText from '../components/AppText';
 import { ListItem } from '../components/lists';
+import ContactSellerForm from '../components/ContactSellerForm';
 
 function ListingDetailsScreen({ route }) {
   const listing = route.params;
 
   return (
-    <View>
+    <KeyboardAvoidingView
+      behavior="position"
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}>
       <Image style={styles.image} source={{ uri: listing.images[0].url }} />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>{listing.title}</AppText>
@@ -26,8 +29,10 @@ function ListingDetailsScreen({ route }) {
             subTitle="5 Listings"
           />
         </View>
+
+        <ContactSellerForm listing={listing} />
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
